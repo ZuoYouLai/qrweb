@@ -1,0 +1,169 @@
+
+:global {
+  .ant-table-tbody,body,.ant-calendar-header .ant-calendar-next-century-btn,.ant-calendar-header .ant-calendar-next-decade-btn,.ant-calendar-header .ant-calendar-next-month-btn,.ant-calendar-header .ant-calendar-next-year-btn,.ant-calendar-header .ant-calendar-prev-century-btn,.ant-calendar-header .ant-calendar-prev-decade-btn,.ant-calendar-header .ant-calendar-prev-month-btn,.ant-calendar-header .ant-calendar-prev-year-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-next-century-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-next-decade-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-next-month-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-next-year-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-prev-century-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-prev-decade-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-prev-month-btn,.ant-calendar-month-panel-header .ant-calendar-month-panel-prev-year-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-next-century-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-next-decade-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-next-month-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-next-year-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-prev-century-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-prev-decade-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-prev-month-btn,.ant-calendar-year-panel-header .ant-calendar-year-panel-prev-year-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-century-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-decade-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-month-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-next-year-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-century-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-decade-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-month-btn,.ant-calendar-decade-panel-header .ant-calendar-decade-panel-prev-year-btn{font-family:'Source Han Sans' !important;}
+  
+    html, body, #root {
+      //min-width: 1200px;
+      width:100%;
+      height: 100%;
+      color: #000000;
+      background-color: #f7f7f7;
+      font-size: 14px;
+  }
+  .ant-table-thead > tr > th {
+    text-align: center !important;
+  }
+  .ant-table table{
+    text-align: center !important;
+  }
+  .ant-menu-vertical > .ant-menu-item, .ant-menu-inline > .ant-menu-item, .ant-menu-item-group-list > .ant-menu-item, .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-item-group-list > .ant-menu-submenu > .ant-menu-submenu-title {
+    font-size: 15px !important;
+  }
+  .ant-table {
+    color: #000000 !important;
+    font-size: 12px !important;
+  }
+  .ant-table-tbody {
+    font-family: -apple-system, Consolas,monospace, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+  }
+
+  .ant-menu-submenu{
+    .ant-menu-submenu-title{
+      border-left:4px solid #343841;
+      .menuIcon{
+        i{
+          font-size: 1.2em;
+          margin-right: 10px;
+          font-style: normal;
+        }
+
+      }
+    }
+  }
+  .ant-menu-vertical{
+    .ant-menu-submenu {
+      .menuIcon {
+        i {
+          font-size: 1.5em;
+          margin-right: 28px
+        }
+      }
+    }
+  }
+  .ant-menu-submenu-open{
+    .ant-menu-submenu-title{
+      border-color: #c96450;
+      background-color: #2b2f38;
+    }
+    .ant-menu-item-selected{
+      background-color: transparent !important;
+      border-left:4px solid #c96450;
+    }
+  }
+  .ant-menu-submenu-title a{
+    display: block;
+    width: 137px;
+    color: #cccccc;
+  }
+  .table-title{
+    padding-left: 15px;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+  }
+  .ant-form-item-label {
+    text-align: left !important;
+    white-space: inherit !important;
+  }
+  .ant-table-tbody > tr > td {
+    word-break: normal !important;
+    overflow:hidden;
+    white-space:normal;
+  }
+  .table-title em{
+    font-size: 1.3em;
+    color: red;
+  }
+  .ant-table-title {
+    //padding: 10px 8px !important;
+  }
+  .ant-popover-inner-content{
+    color: #000000 !important;
+    font-size: 14px !important;
+  }
+  .addRightButton{
+    float: right;
+    margin-right: 20px;
+  }
+  .vertical-center-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ant-input-affix-wrapper{
+    width:auto !important;
+  }
+  .ant-breadcrumb{
+    margin-left: 5px;
+    line-height: 40px;
+    font-size: 15px !important;
+  }
+  .ant-spin-container{
+    margin-top: 5px;
+  }
+  .ant-dropdown-menu-item{
+    padding: 14px 16px !important;
+    font-size: 15px !important;
+  }
+  .pageRequestTime {
+    position: fixed;
+    left: 12px;
+    color: #9fa1a5;
+    opacity: 1;
+    width: auto;
+    bottom: 22px;
+  }
+  .search-form{
+    background-color: #fafafa;
+    padding: 20px 0 20px 20px;
+    .ant-btn{
+      background-color: #efefef;
+      &.ant-btn-ghost{
+        background-color:#ca6350;
+      }
+    }
+  }
+  .ant-btn-ghost:hover, .ant-btn-ghost:focus{
+    color: #fff !important;
+  }
+
+  .developCards{
+    margin:15px 0;
+    h3.ant-card-head-title{
+      margin: 0;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_l6sowmli1in0o1or.eot');
+  src: url('//at.alicdn.com/t/font_l6sowmli1in0o1or.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_l6sowmli1in0o1or.woff') format('woff'),
+  url('//at.alicdn.com/t/font_l6sowmli1in0o1or.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_l6sowmli1in0o1or.svg#iconfont') format('svg');
+}
+
+@font-face {
+  font-family: 'iconfontuser';  /* project id 157491 */
+  src: url('//at.alicdn.com/t/font_u3ktcsdv2334ygb9.eot');
+  src: url('//at.alicdn.com/t/font_u3ktcsdv2334ygb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_u3ktcsdv2334ygb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_u3ktcsdv2334ygb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_u3ktcsdv2334ygb9.svg#iconfont') format('svg');
+}
+
+
+
+
