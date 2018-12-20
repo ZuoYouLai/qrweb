@@ -26,15 +26,15 @@ const LoginForm = ({
   var message_pwd = strings.getString('login_pleaseEnterPassword')
 
   function onChangeType(){  
-    var pwd = document.getElementById("pwd");
-    pwd.type = 'password'
+    //var pwd = document.getElementById("pwd");
+   // pwd.type = 'password'
    }
   return (
     <Form onSubmit={handleSubmit} className="login-form">
       <FormItem  className="login-input">
 
         {getFieldDecorator('userName', {
-            initialValue: 'lhd',
+
           rules: [{ required: true, message: message_name}],
         })(
           <Input prefix={<Icon type="user" />} placeholder={strings.getString('login_userName')} />
@@ -42,10 +42,10 @@ const LoginForm = ({
       </FormItem>
       <FormItem  className="login-input">
         {getFieldDecorator('password', {
-            initialValue: 'lhd',
+
           rules: [{ required: true, message: message_pwd}],
         })(
-          <Input prefix={<Icon type="lock" />} type="text" placeholder={strings.getString('login_password')}  onChange={onChangeType}/>
+          <Input prefix={<Icon type="lock" />} type="password" placeholder={strings.getString('login_password')}  onChange={onChangeType}/>
         )}
       </FormItem>
       <FormItem  className="login-input">

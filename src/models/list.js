@@ -35,8 +35,11 @@ export default {
     effects: {
         *query({payload }, { call, put }) {
             const data  = yield call(query,parse(payload),api+'item');
-            console.log(data.data)
-            yield put({type:'setState',data:data.data})
+            //console.log(data.data)
+            if(data){
+                yield put({type:'setState',data:data.data})
+            }
+
         },
         *delete({id}, { call, put }) {
             const data  = yield call(query,{},api+'item/'+id +'/destroy');
