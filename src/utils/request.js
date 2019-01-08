@@ -32,20 +32,14 @@ export function apiErrorCode(code,message){
 
 function successResponse(data){
     try{
-        // if (data.code == 1003 || data.code == 2002) {
-        //     clearValidator();
-        //     history.replace('/login')
-        //     return data;
-        // } else {
-            if( data.code == 200){
-                data.code = ''
-            }
-        if( data.code == 422){
+
+        if( data.code == 200){
+            data.code = ''
+        } else if(  data.code == 401 ){
+            clearValidator();
             history.replace('/login')
-            return
         }
         return data;
-       // }
     }
     catch (error)
     {

@@ -4,6 +4,7 @@ import {message} from "antd";
 import { query ,create} from '../services/index';
 import {api, history} from "../config";
 import pathToRegexp from 'path-to-regexp';
+import {GetQueryString} from '../utils/helper'
 export default {
     namespace: 'list',
     state: {
@@ -15,16 +16,16 @@ export default {
     },
     subscriptions: {
         setup({history,dispatch}) {
-            history.listen(({pathname}) => {
+            history.listen((location) => {
 
-                if(pathname == '/'){
+                if(location.pathname == '/'){
                     dispatch({type:'query'});
                     dispatch({type:'setState',Item:{}})
                 }
-                const detail = pathToRegexp(`/detail/:id`).exec(pathname);
-                const preview = pathToRegexp(`/preview/:id`).exec(pathname);
-                if(detail){
-                    dispatch({type:'fetchDetail',id:detail[1]})
+                const detail = pathToRegexp(`/detail/:id`).exec(location.pathname);
+                const preview = pathToRegexp(`/preview/:id`).exec(location.pathname);
+                if(location.query.id){
+                    dispatch({type:'fetchDetail',id:location.query.id})
                 }
                 if(preview){
                     dispatch({type:'preview',id:preview[1]})
@@ -34,10 +35,11 @@ export default {
     },
     effects: {
         *query({payload }, { call, put }) {
+            yield put({type:'loginRequest'})
             const data  = yield call(query,parse(payload),api+'item');
             //console.log(data.data)
             if(data){
-                yield put({type:'setState',data:data.data})
+                yield put({type:'setState',data:data.data,loading:false})
             }
 
         },

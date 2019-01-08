@@ -37,7 +37,7 @@ const List = ({dispatch,list:{data,loading,visible}}) => {
                 <Popover placement="topLeft" title="二维码查看"   content={<img className={`img${row.id}`} src={getQRImage(`${redit}${row.id}`) }/>}>
                     <Link  style={{marginRight:5}}>查看</Link>
                 </Popover>
-                <Link to={`/detail/${row.id}`}  style={{marginRight:5}}>编辑</Link>
+                <Link to={`/detail?id=${row.id}`}  style={{marginRight:5}}>编辑</Link>
                 <a onClick={() => downloadIamge(`img${row.id}`,row.name) } style={{marginRight:5}}>下载二维码<img className={`img${row.id}`} src={getQRImage(`${redit}${row.id}`) } style={{display:'none'}}/></a>
                 <Link> <Popconfirm title="是否要删除" onConfirm={() => handleRemove(row)} okText="删除" cancelText="取消">删除</Popconfirm> </Link>
             </p>

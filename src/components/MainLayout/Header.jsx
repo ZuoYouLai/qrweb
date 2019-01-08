@@ -28,7 +28,7 @@ function Header({dispatch, menus}) {
             </div>
             <div className={styles.user}>
                 <Dropdown overlay={menu} placement="bottomLeft">
-                    <div className={styles.headerBut}><Icon type="user" className={styles.IconCom}/> 用户<Icon type="caret-down" /></div>
+                    <div className={styles.headerBut}><Icon type="user" className={styles.IconCom}/> {userName.userName}<Icon type="caret-down" /></div>
                 </Dropdown>
 
 

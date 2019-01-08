@@ -8,6 +8,14 @@ import strings from "../constants/strings";
 
 const BASE_URL = config.api;
 
+// js获取url指定参数值
+export function GetQueryString(name) {
+    console.log(window.location)
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
 export function generateUrl(url) {
     if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
         return url;

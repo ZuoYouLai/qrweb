@@ -6,6 +6,7 @@ import {connect} from "dva";
 import {Button, Form,Input,Breadcrumb } from 'antd';
 import pathToRegexp from 'path-to-regexp';
 import {Link} from 'dva/router'
+import {GetQueryString} from '../utils/helper'
 // 定义rem基准值
 const sizeBase = 23.4375
 
@@ -53,7 +54,7 @@ const unitExportFn = (unit, type, target) => {
         setTimeout(() => {
             const {Item}  = this.props.list;
             this.setState({editorState:BraftEditor.createEditorState(Item.content, { unitImportFn })})
-            console.log(Item)
+
         },500)
 
      }
@@ -149,11 +150,9 @@ const unitExportFn = (unit, type, target) => {
                  name:value.name,
                  content:this.state.editorState.toHTML()
              }
-             const detail = pathToRegexp(`/detail/:id`).exec(location.pathname);
-             if(detail){
-                 payload.id = detail[1];
+             if(this.props.location.query.id){
+                 payload.id = this.props.location.query.id;
              }
-             console.log(payload)
              this.props.dispatch({type:'list/update',payload})
          })
 

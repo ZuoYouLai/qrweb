@@ -18,12 +18,15 @@ export default {
     *login({ payload ,url}, { call, put }) {
       yield put({ type: 'loginLoading' });
       const data  = yield call(usersQ, parse(payload),api + url, false);
+        yield put({ type: 'loginResponse' });
         if (data.code && data.code!= 0) {
-          message.error(data.code+':'+data.message);
+          message.error(data.code+':'+data.msg);
+          yield put({type:'loginRequest'})
         }else{
           saveValidator(data.data);
           history.replace('/')
         }
+
     },
     *logout({ }, { call, put }){
         const data  = yield call(query, {},api + '/logout', false);
@@ -40,7 +43,10 @@ export default {
     },
     loginRequest(state, action) {
           return { ...action, isLogin: true,loading: false };
-    }
+    },
+    loginResponse(state) {
+        return { ...state, loading: false };
+    },
   }
 
 };
