@@ -14,11 +14,13 @@ const config = {
     development: {
        // api: 'http://ljia.xyz/'
         api:'http://212.64.92.109/v0/',
+        url:'http://212.64.92.109/',
         redit:'http://wbj88888.cn/preview.html?id=',
     },
     production: {
       //  api: 'http://ljia.xyz/'
         api:'http://212.64.92.109/v0/',
+        url:'http://212.64.92.109/',
         redit:'http://wbj88888.cn/preview.html?id=',
     },
 }

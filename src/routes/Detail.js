@@ -1,7 +1,7 @@
 import 'braft-editor/dist/index.css'
 import React from 'react'
 import BraftEditor from 'braft-editor'
-import {history,api} from '../config'
+import {history,api,url} from '../config'
 import {connect} from "dva";
 import {Button, Form,Input,Breadcrumb } from 'antd';
 import pathToRegexp from 'path-to-regexp';
@@ -170,7 +170,7 @@ const unitExportFn = (unit, type, target) => {
          let data = JSON.parse(response.target.responseText).data;
          console.log(JSON.parse(response.target.responseText))
          param.success({
-             url: api+ data.path,
+             url: url+ data.path,
              meta: {
                  id: 'xxx',
                  title: 'xxx',
